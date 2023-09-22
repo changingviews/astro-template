@@ -22,7 +22,7 @@ const navigationLinks = [
 <header class="fixed grid h-24 w-full items-center shadow shadow-black/5" x-data="{ open: false }">
 	<div class="container mx-auto flex items-center justify-between px-4 py-2">
 		<!-- Brand Logo -->
-		<a href="/" aria-label="Back to Home">
+		<a href="/" aria-label="Back to Home" role="button" tabindex="0">
 			<img
 				:src="!$store.theme.isDark ? '/assets/logo-max-black.svg' : '/assets/logo-max-white.svg'"
 				class="h-12"
@@ -32,7 +32,7 @@ const navigationLinks = [
 			/>
 		</a>
 
-		<div class="flex items-center justify-between gap-12">
+		<div class="flex items-center justify-between gap-4 lg:gap-12">
 			<!-- Desktop Navigation -->
 			<nav class="hidden lg:block">
 				<ul class="flex gap-8">
@@ -56,7 +56,7 @@ const navigationLinks = [
 				type="button"
 				x-data
 				@click="$store.theme.toggle()"
-				class="rounded p-2 transition-colors hover:bg-black/5 hover:text-primary dark:hover:bg-white/5"
+				class="rounded p-2 outline-none transition-colors hover:bg-black/5 hover:text-primary focus-visible:outline-accent dark:hover:bg-white/5"
 			>
 				<span class="sr-only">Toggle theme</span>
 				<svg
@@ -101,7 +101,7 @@ const navigationLinks = [
 				aria-expanded="false"
 				:aria-expanded="open.toString()"
 				aria-controls="website-menu"
-				class="block lg:hidden"
+				class="block rounded p-2 outline-none transition-colors hover:bg-black/5 hover:text-primary focus-visible:outline-accent dark:hover:bg-white/5 lg:hidden"
 			>
 				<span class="sr-only">Toggle mobile navigation</span>
 				<svg
@@ -140,11 +140,14 @@ const navigationLinks = [
 				x-collapse.duration.500ms
 				class="absolute left-0 top-24 w-full bg-black/5 p-8"
 			>
-				<ul class="grid justify-center gap-8 divide-y divide-black text-center">
+				<ul class="flex flex-col justify-center divide-y divide-black/10 text-center">
 					{
 						navigationLinks.map((link) => (
-							<li class="w-full">
-								<a class="text-xl" href={link.href}>
+							<li class="w-full py-4">
+								<a
+									class="text-xl tracking-wide transition-colors hover:text-accent"
+									href={link.href}
+								>
 									{link.name}
 								</a>
 							</li>
