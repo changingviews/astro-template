@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+	darkMode: 'class',
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				black: '#1F1F1F',
+				white: '#F6F6F6',
+				primary: '#B56576',
+				accent: '#FFB452',
+			},
+		},
 	},
 	plugins: [],
 }
