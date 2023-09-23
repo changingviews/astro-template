@@ -19,7 +19,10 @@ const navigationLinks = [
 ]
 ---
 
-<header class="fixed grid h-24 w-full items-center shadow shadow-black/5" x-data="{ open: false }">
+<header
+	class="fixed z-50 grid h-24 w-full items-center bg-white shadow shadow-black/5 dark:bg-black"
+	x-data="{ open: false }"
+>
 	<div class="container mx-auto flex items-center justify-between px-4 py-2">
 		<!-- Brand Logo -->
 		<a href="/" aria-label="Back to Home" role="button" tabindex="0">
@@ -138,7 +141,7 @@ const navigationLinks = [
 				@click.outside="open = false"
 				x-collapse
 				x-collapse.duration.500ms
-				class="absolute left-0 top-24 w-full bg-black/5 p-8"
+				class="absolute left-0 top-24 z-50 w-full bg-white p-8 before:absolute before:left-0 before:top-0 before:-z-40 before:h-full before:w-full before:bg-black/5 before:content-['']"
 			>
 				<ul class="flex flex-col justify-center divide-y divide-black/10 text-center">
 					{
