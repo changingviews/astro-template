@@ -41,9 +41,9 @@ const navigationLinks = [
 				<ul class="flex gap-8">
 					{
 						navigationLinks.map((link) => (
-							<li>
+							<li class="relative before:absolute before:bottom-0 before:-z-10 before:h-0 before:w-full before:bg-primary before:transition-all before:ease-out before:content-[''] hover:before:h-full">
 								<a
-									class="text-xl tracking-wide transition-colors hover:text-accent"
+									class="inline-block px-4 py-2 text-xl tracking-wide transition-colors "
 									href={link.href}
 								>
 									{link.name}
